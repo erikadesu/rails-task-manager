@@ -1,0 +1,13 @@
+<div class="alert alert-primary" role="alert">
+  <h1><%= @task.title %> </h1>
+  <p><%= @task.details %> </p>
+</div>
+
+<p><input type="checkbox" <%= @task.completed ? 'checked' : '' %> >Task completed</p>
+
+<button type="button" class="btn btn-outline-primary"><%= link_to 'Edit this task', edit_task_path(@task) %> </button>
+
+
+<button type="button" class="btn btn-outline-primary"><%= link_to 'Back to My Tasks', tasks_path %></button>
+
+<button type="button" class="btn btn-outline-danger"><%= link_to 'Delete this task', task_path(@task), method: 'delete', data: { confirm: "Are you sure?" } %> </button>

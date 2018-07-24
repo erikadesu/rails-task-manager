@@ -1,0 +1,14 @@
+<div class="container">
+<h1>My Tasks</h1>
+  <ol>
+    <% @tasks.each do |task| %>
+    <li>
+      <input type="checkbox" <%= task.completed ? 'checked' : '' %> >
+      <%= link_to task.title, task_path(task) %>
+    </li>
+    <% end %>
+  </ol>
+
+<button type="button" class="btn btn-outline-primary"><%= link_to 'Add new task', tasks_new_path %></button>
+</div>
+<br>
